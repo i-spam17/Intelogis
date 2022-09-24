@@ -7,18 +7,21 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import pages.LoginPage;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class BaseTest {
     @BeforeAll
     public static void setup() {
         Configuration.timeout = 10000;
         Configuration.browser = "chrome";
-        Configuration.browserPosition = "890x10";
+        Configuration.browserPosition = "10x10";
         Configuration.browserSize = "780x950";
+        Configuration.headless = false;// удалить строку если нужно посмотреть на браузер!
         Configuration.baseUrl = "https://ilswebreact-develop.azurewebsites.net/";
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
+        Configuration.reportsFolder = "target/screenshots";
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(true)
+                .savePageSource(true));
     }
 
     public LoginPage openLoginPage() {

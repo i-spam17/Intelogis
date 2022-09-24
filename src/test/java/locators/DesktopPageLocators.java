@@ -10,7 +10,5 @@ public class DesktopPageLocators {
         return $(By.xpath("//span[.='Тестер']"));
     }
 
-    public SelenideElement headName() {
-        return $(By.xpath("//h1[contains(text(), 'Рабочий')]"));
-    }
+    public SelenideElement desktopPage(){return $(By.xpath("//main"));}
 }

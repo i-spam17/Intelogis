@@ -17,4 +17,18 @@ public class LoginPageLocators {
     public SelenideElement enterButton() {
         return $(By.xpath("//span[.='Войти']"));
     }
+
+    public SelenideElement alertLogin() {
+        return $(By.xpath("//div[contains(text(), 'логин')]"));
+    }
+
+    public SelenideElement alertPassword() {
+        return $(By.xpath("//div[contains(text(), 'пароль')]"));
+    }
+
+    public SelenideElement loginPage() {return $(By.xpath("//main"));}
+
+    public SelenideElement alertErrorAuth() {
+        return $(By.xpath("//div[text()='Ошибка авторизации. Не верные логин/пароль']"));
+    }
 }

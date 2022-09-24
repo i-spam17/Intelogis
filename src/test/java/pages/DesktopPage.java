@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import helpers.Helpers;
 import io.qameta.allure.Step;
 import locators.DesktopPageLocators;
 
@@ -12,12 +13,7 @@ public class DesktopPage {
     @Step("Проверка имени текущего пользователя")
     public DesktopPage checkCurrentUserName (String username) {
         locator().currentUser().shouldHave(Condition.text(username));
-        return this;
-    }
-
-    @Step("Проверка заголовка \"Рабочий стол\"")
-    public DesktopPage checkHeadName (String headName) {
-        locator().headName().shouldHave(Condition.text(headName));
+        Helpers.takeScr(locator().desktopPage());
         return this;
     }
 }

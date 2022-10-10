@@ -16,7 +16,7 @@ public class BaseTest {
         Configuration.browser = "chrome";
         Configuration.browserPosition = "10x10";
         Configuration.browserSize = "780x950";
-        Configuration.headless = false;// удалить строку если нужно посмотреть на браузер!
+        Configuration.headless = true;// удалить строку если нужно посмотреть на браузер!
         Configuration.baseUrl = "https://ilswebreact-develop.azurewebsites.net/";
         Configuration.reportsFolder = "target/screenshots";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
